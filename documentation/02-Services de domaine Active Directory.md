@@ -15,7 +15,7 @@ Nous allons ensuite crée une nouvelle foret que nous appelrons Formation.local 
 
 Ensuite suiver les etape suivant et a la fin  de l'installation le serveur rédmarrera
 
-# **Installation d'un RODC**
+# **Installation d'un RODC sur AD2**
 Dans Site et service Active directory, j'ai renommé le site par defaut par le nom "Marseille" et j'ai crée un autre site avec le nom de "Paris" (ce site sera attribué au serveur AD2 qui sera en lecture seul)
 
 ![Nouveau site Paris](../Screenshot/nouveau-site-Paris-RODC.png)
@@ -31,3 +31,17 @@ Ensuite sur AD2, j'ai ajouter le role AD-DS et j'ai ajouter lecontroleur de doma
 Puis j'ai verifier dans "Utilisateur et Ordinateur Active Directory" que AD2 etait bien lecteur seul 
 
 ![VerificationAD2-RODC](../Screenshot/VerificationAD2-RODC.png)
+
+# **Verification a réaliser apres l'installtion d'uun contrôleur de domaine**
+
+L'installation d'un controleur de domaine terminée, il peut être utile de vérifier les points suivants :
+- la bonne configuration des sites AD.
+- La configuration de la réplication intersites.
+- La bonne configuration de la zone DNS.
+- L'association des sous-réseaux IP avec les bon sites.
+
+![Verification-association des sous réseauIP avec les bon sites](../Screenshot/Verification-association-des-sous-réseauIP-avec-les-bon-sites.png)
+
+Verifier la présence des enregistrement de type SRV dans le DNS :
+
+![verification-enregistrement type SRV](../Screenshot/verification-enregistrement-type-SRV.png)
