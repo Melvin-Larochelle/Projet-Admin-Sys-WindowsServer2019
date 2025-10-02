@@ -45,3 +45,9 @@ L'installation d'un controleur de domaine terminée, il peut être utile de vér
 Verifier la présence des enregistrement de type SRV dans le DNS :
 
 ![verification-enregistrement type SRV](../Screenshot/verification-enregistrement-type-SRV.png)
+
+On peut aussi executer la commande dcdiag /test:replication afin de s'assurer de la bonne replication entre AD1 et AD2
+
+![commande-verif-bonne-replication](../Screenshot/commande-verif-bonne-replication.png)
+
+
