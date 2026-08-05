@@ -1,14 +1,64 @@
-# Projet-Admin-Sys-WindowsServer2019
-Ce projet documente la mise en place et la configuration d'une infrastructure informatique complète basée sur Windows Server 2019, réalisée dans un environnement virtualisé.
+# Windows Server 2019 Administration Lab
 
-L'objectif est de démontrer la maîtrise des services fondamentaux de l'écosystème Windows Server, de l'installation initiale à la gestion des utilisateurs et des politiques de sécurité. Ce laboratoire pratique s'appuie sur les méthodologies présentées dans l'ouvrage de référence de Nicolas Bonnet (Éditions ENI).
+## Présentation
 
-### Technologies et compétences mises en œuvre :
+Ce projet consiste à concevoir, déployer et administrer une infrastructure
+Windows Server 2019 composée de deux contrôleurs de domaine, de deux serveurs
+membres et d'un poste client Windows 10.
 
-* **Système d'exploitation :** Windows Server 2019 Datacenter
-* **Virtualisation :** VMware Workstation / Microsoft Hyper-V
-* **Services d'annuaire :** Active Directory Domain Services (AD DS)
-* **Services réseau :** DNS, DHCP
-* **Sécurité et gestion :** Objets de stratégie de groupe (GPO)
-* **Services de fichiers :** Partages réseau et permissions NTFS
-* **Automatisation :** Commandes de base PowerShell
+L'objectif est de mettre en pratique l'administration d'un environnement
+Microsoft Windows comprenant Active Directory, DNS, DHCP, les stratégies de
+groupe et l'administration avec PowerShell.
+
+## Objectifs
+
+- Installer et configurer Active Directory Domain Services
+- Déployer et administrer le service DNS
+- Installer et configurer un serveur DHCP
+- Gérer les utilisateurs, groupes et unités d'organisation
+- Configurer et tester des stratégies de groupe
+- Mettre en place un second contrôleur de domaine
+- Comprendre la réplication Active Directory
+- Administrer Windows Server avec PowerShell
+- Configurer et administrer Windows Server Core
+- Réaliser et comprendre le clonage de machines virtuelles
+
+## Architecture
+
+![Schéma de l'infrastructure](images/Schema/Schema-projet-windowsServer.png)
+
+## Machines du laboratoire
+
+| Machine | Système d'exploitation | Rôle |
+|---|---|---|
+| AD1 | Windows Server 2019 | Contrôleur de domaine principal, DNS |
+| AD2 | Windows Server 2019 | Contrôleur de domaine secondaire, DNS |
+| SV1 | Windows Server 2019 | Serveur membre, DHCP |
+| SRVCore | Windows Server 2019 Core | Administration sans interface graphique |
+| CL10-01 | Windows 10 | Poste client du domaine |
+
+## Technologies utilisées
+
+- Windows Server 2019
+- Windows 10
+- Active Directory Domain Services
+- DNS
+- DHCP
+- Group Policy
+- PowerShell
+- Windows Server Core
+- VirtualBox / VMware / Hyper-V
+
+## Documentation
+
+La documentation détaillée est disponible dans le dossier [`docs`](docs/).
+
+## Compétences démontrées
+
+- Administration Active Directory
+- Gestion des services DNS et DHCP
+- Gestion des utilisateurs et des droits
+- Configuration de GPO
+- Administration distante
+- Automatisation avec PowerShell
+- Diagnostic et résolution d'incidents
