@@ -25,7 +25,7 @@ groupe et l'administration avec PowerShell.
 
 ## Architecture
 
-![Schéma de l'infrastructure](images/Schema/Schema-projet-windowsServer.png)
+![Schéma de l'infrastructure](Images/Schema/Schema-projet-windowsServer.png)
 
 ## Machines du laboratoire
 
