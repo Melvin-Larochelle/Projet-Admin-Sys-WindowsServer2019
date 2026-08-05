@@ -51,7 +51,7 @@ groupe et l'administration avec PowerShell.
 
 ## Documentation
 
-La documentation détaillée est disponible dans le dossier [`docs`](docs/).
+La documentation détaillée est disponible dans le dossier [`docs`](Documentation/).
 
 ## Compétences démontrées
 
