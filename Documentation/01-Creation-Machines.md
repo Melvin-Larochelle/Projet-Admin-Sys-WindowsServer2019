@@ -6,16 +6,16 @@ Voici la configuration de AD1 :
 
 Voici la configuration de AD2 :
 
-![Configuration du serveur AD2](../Screenshot/creationAD2.png)
+![Configuration du serveur AD2](../images/creationAD2.png)
 
 Voici la configuration de SV1 :
 
-![Configuration du serveur SV1](../Screenshot/creationSV1.png)
+![Configuration du serveur SV1](../images/creationSV1.png)
 
 Voici la configuration de SRVCore :
 
-![Configuration du serveur SRVCore](../Screenshot/creationSRVCore.png)
+![Configuration du serveur SRVCore](../images/creationSRVCore.png)
 
 Voici la configuration de Cl10-01 :
 
-![Configuration du serveur CL10-01](../Screenshot/creationCL10-01.png)
+![Configuration du serveur CL10-01](../images/creationCL10-01.png)
