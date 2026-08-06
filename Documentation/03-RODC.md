@@ -1,3 +1,5 @@
+# **Installation d'un RODC sur AD2**
+
 Le RODC été introduit avec Windows Server 2008 pour améliorer la sécurité, notamment dans les sites distants où la sécurité physique des serveurs ne peut pas être garantie.
 
 Un RODC permet aux utilisateurs d'un site distant de :
@@ -21,7 +23,6 @@ Un RODC est particulièrement adapté pour :
 - Une succursale avec peu de personnel informatique
 - Un site où le serveur n'est pas suffisamment protégé physiquement
 
-# **Installation d'un RODC sur AD2**
 Dans Site et service Active directory, j'ai renommé le site par défaut par le nom "Marseille" et j'ai crée un autre site avec le nom de "Paris" (ce site sera attribué au serveur AD2 qui sera en lecture seul)
 
 ![Nouveau site Paris](../Images/RODC/nouveau-site-Paris-RODC.png)
