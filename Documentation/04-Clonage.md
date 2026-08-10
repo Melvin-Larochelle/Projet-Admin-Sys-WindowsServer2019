@@ -26,3 +26,11 @@ Puis il faut exécuter la commande "Get-ADDCCloningExcludedApplicationList" afin
 De notre coté aucun programme ou service ne posera problème donc nous pouvons ensuite utiliser la commande "New-ADDCCloneConfigFile" pour configurer ça création. Il est possible de lui attribuer directement une adresse IP fixe, un nom, une route par défaut et son nom de site :
 
 ![Clonage-verification](../Images/Clonage/Clonage-verification.png)
+
+Ensuite arrêter le serveur AD1, même si une exportions de la VM est possible sans avoir à l'éteindre, dans un cas de clonage il est préférable de le faire.
+Ensuite exportez AD1, dans le dossier C:\CloneAD1. Pour cela, il suffit de faire un clique droit sur AD1, et cliquez sur exporter.
+Ensuite on clique sur "Importer un ordinateur virtuel", on sélectionne le dossier CloneAD1,dans le choix du type d'importation on sélectionne l'option "Copier l'ordinateur virtuel (créer un ID unique) et pour l'emplacement on sélectionne un autre emplacement que celui proposer par défaut afin d'éviter d'éventuels conflit lié au nom en double
+
+![Emplacement-AD3](../Images/Clonage/Emplacement-AD3.png)
+
+Une fois la création effectué vous pouvez lancer la machine.
