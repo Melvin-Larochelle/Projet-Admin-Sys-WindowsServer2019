@@ -17,7 +17,7 @@ Ensuite pour la configuration de la carte réseau il est tout d'abord nécessair
 
 Nous allons maintenant pouvoir lui configurer une adresse IP grâce a cette commande : 'netsh interface ipv4 set address name="Ethernet" source=static address=192.168.1.93 mask=255.255.255.0 gateway=192.168.1.254'
 
-![Configuration-carte-reseau](../Images/SRV-Core/Config-carte-reseau.png)
+![Configuration-carte-reseau](../Images/SRV-Core/config-carte-reseau.png)
 
 Il faut aussi penser a configurer l'adresse DNS avec cette commande : 'netsh interface ip set dns "Ethernet" static 192.168.1.90 primary'
 
@@ -35,4 +35,4 @@ Le commutateur 'Online' permet de voir les fonctionnalité disponible dans le sy
 Ensuite il nous suffit d'ouvrir le fichier avec Notepad
 
 
-![Affichage-de-la-liste-des-fonctionnalité](../Images/SRV-Core/Affichage-liste-fonctionnlité.png)
+![Affichage-de-la-liste-des-fonctionnalité](../Images/SRV-Core/Affichage-liste-fonctionnalité.png)
