@@ -15,10 +15,7 @@ Ensuite pour la configuration de la carte réseau il est tout d'abord nécessair
 
 ![Recuperation-nom-carte-reseau](../Images/SRV-Core/nom-carte-reseau.png)
 
-Nous allons maintenant pouvoir lui configurer une adresse IP grâce a cette commande : 
-'''cmd
-netsh interface ipv4 set address name="Ethernet" source=static address=192.168.1.93 mask=255.255.255.0 gateway=192.168.1.254
-'''
+Nous allons maintenant pouvoir lui configurer une adresse IP grâce a cette commande : `netsh interface ipv4 set address name="Ethernet" source=static address=192.168.1.93 mask=255.255.255.0 gateway=192.168.1.254`
 ![Configuration-carte-reseau](../Images/SRV-Core/config-carte-reseau.png)
 
 Il faut aussi penser a configurer l'adresse DNS avec cette commande : 'netsh interface ip set dns "Ethernet" static 192.168.1.90 primary'
