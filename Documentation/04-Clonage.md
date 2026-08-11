@@ -15,7 +15,7 @@ Cela permet donc
 - Facilite les extensions d'infrastructure, particulièrement intéressant lors de l'ouverture de nouveaux sites ou de l'ajout de capacité.
 - Réduit les erreurs humaines car les paramètres validés du contrôleur existant servent de modèle.
 
-Pour commencer il suffit d'ajouter le contrôleur de domaine dans le groupe `Contrôleur de domaine clonable` :
+Pour commencer il suffit d'ajouter le contrôleur de domaine dans le groupe "Contrôleur de domaine clonable" :
 
 ![Configuration-groupe-clonable](../Images/Clonage/Configuration-groupe-clonable.png)
 
