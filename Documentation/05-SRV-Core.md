@@ -35,3 +35,17 @@ Ensuite il nous suffit d'ouvrir le fichier avec Notepad
 
 
 ![Affichage-de-la-liste-des-fonctionnalité](../Images/SRV-Core/Affichage-liste-fonctionnalité.png)
+
+Le nom du rôle pour installer un serveur DNS est : DNS-Server-Full-Role
+Il faut donc saisir : `dism /online /enable-feature /featureName:DNS-Server-Full-Role`
+
+
+![Installation-du-role-DNS](../Images/SRV-Core/Installation-role-DNS.png)
+
+
+![Connexion-DNS-SRV-Core](../Images/SRV-Core/Connexion-DNS-depuis-AD1.png) 
+
+Vous verrez le serveur s'afficher dans la console. Il est donc maintenant possible de la gerer depuis AD1
+
+
+Si l'on souhaite a l'inverse supprimer le rôle, on saisi la commande : `dism /online /disable-feature /featureName:DNS-Server-Full-Role`
