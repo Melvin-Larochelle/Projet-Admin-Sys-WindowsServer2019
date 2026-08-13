@@ -1,3 +1,5 @@
+# **Conteneurisation**
+
 Les conteneurs sont une nouvelle fonctionnalité apportée par Windows Server 2016 TP3. Avec cette fonctionnalité, 
 le système d’exploitation est virtualisé. 
 
@@ -29,3 +31,15 @@ ou de Docker.
 
 L’administration s’effectue par l’intermédiaire du client Docker ou tout simplement en PowerShell. Le déploiement 
 des applications dans le cloud va s’en trouver facilité. 
+
+Pour installer le rôle en ligne de commande, il faut lancer une console PowerShell et taper cette commande `Install-WindowsFeature Containers`
+
+![Mise-en-place](../Images/Conteneurisation/Mise-en-place.png)
+
+Pour la suite, il est possible que vous rencontrier un probleme d'installation pour docker car les machines ne sont pas configurer pour acceder a Internet.
+Je vais decrire ce que j'ai fait dans un document qui sera dans le dossier problème rencontrer
+Pour ma part j'ai configurer AD1 pour qu'il permettes a mes machines de communiquer avec Internet en passant par lui (AD1 agit comme un router/NAT)
+
+Nous pouvons maintenant installer le module PowerShell nommé DockerMsftProvider grace a la commande : `Install-Module -Name DockerMsftProvider -Force`
+
+Install-Package -Name docker -ProviderName DockerMsftProvider -Force
