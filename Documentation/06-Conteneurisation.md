@@ -40,6 +40,36 @@ Pour la suite, il est possible que vous rencontrier un probleme d'installation p
 Je vais decrire ce que j'ai fait dans un document qui sera dans le dossier problème rencontrer
 Pour ma part j'ai configurer AD1 pour qu'il permettes a mes machines de communiquer avec Internet en passant par lui (AD1 agit comme un router/NAT)
 
-Nous pouvons maintenant installer le module PowerShell nommé DockerMsftProvider grace a la commande : `Install-Module -Name DockerMsftProvider -Force`
+Nous pouvons maintenant installer Docker CE / Moby
 
-Install-Package -Name docker -ProviderName DockerMsftProvider -Force
+Invoke-WebRequest -UseBasicParsing `
+  "https://raw.githubusercontent.com/microsoft/Windows-Containers/Main/helpful_tools/Install-DockerCE/install-docker-ce.ps1" `
+  -OutFile "install-docker-ce.ps1"
+
+.\install-docker-ce.ps1
+
+![Installation-Docker](../Images/Conteneurisation/Installation-Docker.png)
+
+Ensuite nous allons récupérer une image de base en utilisant cette commande : `docker pull mcr.microsoft.com/Windows/servercore:1809`
+
+![Telechargement-de-l'image](../Images/Conteneurisation/Telechargement-image.png)
+
+Puis on execute le conteneur : `docker run --name website -it mcr.microsoft.com/Windows/servercore:1809 cmd`
+
+Ensuite on installe un serveur web IIS : `PowerShell install-windowsfeature web-server`
+
+Une image peut-être crée a depuis ce conteneur. Cela permet de créer des conteneurs avec IIS préinstallé
+
+Retourner ensuite dans la console DOS en utilisant la commande `Exit`
+
+Vérifier que le conteneur est toujours démarrer avec la commande `docker container ls`
+Si ce n'est pas le cas executer la commande `docker container start website`
+Pour proceder a l'arret d'un conteneur `docker container stop nom_du_conteneur`
+
+Pour crée un image a partir d'un contaneur utilisé la commande `docker commit website windowsservercoreweb`
+Ensuite le conteneur peut-être crée a partir de l'image en utilisant la commande : `docker run --name nom-donné -p 80:80 -it windowsservercoreweb cmd`
+
+Ensuite on pense a demarrer le serveur et on recupere l'adresse IP du serveur Core afin de pouvoir tester le site Web depuis Internet Explorer sur AD1 :
+
+![Test-du-serveur-web](../Images/Conteneurisation/Test-web-serveur.png)
+
