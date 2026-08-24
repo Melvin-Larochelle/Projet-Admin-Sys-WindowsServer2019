@@ -68,5 +68,21 @@ mise en cache est désactivée.
 précédé par son conteneur. Si ce dernier est enfant d’un autre conteneur, celui ci apparaîtra et ainsi de suite jusqu’à 
 la racine du domaine. On peut également visualiser la classe de l’objet ainsi que les date et heure de création et 
 dernière modification. Le nombre de séquences de mise à jour (Update Sequence Numbers  USNs), qui s’incrémente 
-à chaque modification, est également présent. Enfin la protection contre la suppression accidentelle peut également 
-être activée. Par défaut, cette fonctionnalité est désactivée. 
+à chaque modification, est également présent.
+
+Enfin la protection contre la suppression accidentelle peut également être activée. Par défaut, cette fonctionnalité est désactivée. 
+
+Le jeton d'acces 
+Lors de l’ouverture d’une session, Active Directory se charge de l’authentification des utilisateurs et ordinateurs. 
+L’autorité de sécurité locale (LSA, Local Security Authority) traite les requêtes d’authentification effectuées, pour cela 
+Kerberos v5 est utilisée. Le protocole NTLM / NTLMv2 peut également être utilisé. 
+Après avoir authentifié un utilisateur, le contrôleur de domaine qui a effectué l’opération génère un jeton d’accès. Ce 
+dernier contient le SID (Security Identifier) de l’utilisateur, ainsi que le SID des groupes dont l’utilisateur est membre. 
+Lors de l’ajout dans un nouveau groupe (après la création du jeton), il est nécessaire de fermer puis rouvrir la 
+session. Ceci permet d’effectuer une nouvelle fois l’étape de génération du jeton et de posséder le SID du nouveau 
+groupe. Si la régénération n’est pas effectuée, l’utilisateur ne pourra pas accéder à la ressource partagée. 
+Lors de la tentative d’accès à une ressource, les SID contenus dans le jeton de l’utilisateur sont comparés à ceux 
+présents dans la DACL (Discretionary Access Control List). Si un SID est trouvé, l’utilisateur se voit accorder l’accès 
+avec les droits configurés dans la liste de contrôle d’accès, sinon l’accès est refusé. 
+
+Il est aussi possible de crée un utilisateur en PowerShell afin de l'automatisé. Cette rubrique sera expliqué dans le document "PowerShell"
