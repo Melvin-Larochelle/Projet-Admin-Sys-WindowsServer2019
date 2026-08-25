@@ -86,3 +86,68 @@ présents dans la DACL (Discretionary Access Control List). Si un SID est trouv�
 avec les droits configurés dans la liste de contrôle d’accès, sinon l’accès est refusé. 
 
 Il est aussi possible de crée un utilisateur en PowerShell afin de l'automatisé. Cette rubrique sera expliqué dans le document "PowerShell"
+
+# **Les groupes dans Active Directory**
+
+Afin de faciliter l’administration, il est recommandé d’utiliser des groupes (comprenant des utilisateurs ou des 
+ordinateurs). L’administration des accès à des ressources partagées au travers de groupes de sécurité est plus 
+aisée. Une fois le groupe positionné, l’administration s’effectue depuis la console Utilisateurs et ordinateurs Active 
+Directory et quasiment plus sur la ressource. Pour donner une autorisation, il suffit de rajouter l’utilisateur dans le 
+groupe, pour lui ôter l’autorisation, il suffit d’enlever l’utilisateur du groupe.  
+
+De plus, un groupe peut être positionné sur la liste de contrôle d’accès de plusieurs ressources. La création des 
+groupes peut être réalisée de deux manières : 
+- Par profil (un groupe Compta par exemple) ce qui permet de regrouper les personnes du service comptabilité. 
+- Par ressources (Compta, IT…), ce qui permet de regrouper toutes les personnes souhaitant accéder à une ressource. 
+
+Le nom du groupe doit, dans la mesure du possible, être le plus parlant possible. Prenons un exemple de 
+nomenclature, cette dernière doit englober les composants suivants :  
+- L’étendue, ce point est traité plus loin dans le chapitre (G pour globale, U pour universel ou DL pour domaine local).
+- Le nom de la ressource (Compta, Fax, BALNicolas, RH…). 
+- Le droit NTFS qui va être attribué au groupe (w pour écriture, m pour modifier, r pour lecture...). 
+
+Ainsi, si le groupe se nomme G_Compta_w, on peut très vite en déduire que c’est un groupe global positionné sur le 
+dossier partagé Compta et qui donne des droits d’écriture à ses membres.
+
+Il existe dans Active Directory deux types de groupes : les groupes de sécurité et les groupes de distribution. 
+Concernant le premier type, il consiste en une entité de sécurité et possède un SID. Il peut donc être positionné sur 
+une liste de contrôle d’accès ou être utilisé comme groupe de diffusion par le serveur Exchange. Ce type de groupe 
+possédant un SID, il est présent dans le jeton d’accès de l’utilisateur. Pour cette raison, il est conseillé, si le groupe 
+est utilisé uniquement pour l’envoi de mail, de choisir un groupe de distribution. 
+
+Ce dernier type de groupes est utilisé par les applications de messagerie comme groupe de diffusion. Ne possédant 
+pas de SID, les groupes concernés ne peuvent pas être positionnés dans une liste de contrôle d’accès. Un mail 
+envoyé à ce groupe est transféré à l’ensemble de ses membres. 
+
+Un groupe peut contenir des utilisateurs, des ordinateurs ou d’autres groupes en fonction de son étendue. En effet, 
+cette dernière a un impact sur les membres et sur la ressource sur laquelle il est positionné. Il existe quatre 
+étendues de groupe : 
+
+- Local : ce type de groupe se trouve dans la base locale (base SAM) de chaque machine ou serveur (à l’exception des 
+contrôleurs de domaine qui n’en possèdent pas). Il peut contenir les utilisateurs ou les groupes locaux à la machine. 
+Ces groupes locaux peuvent également contenir des objets Active Directory de type utilisateurs, ordinateurs ou 
+groupes. Il est utilisé uniquement dans des ACL locales. 
+
+Lors de la jonction au domaine d’une station de travail ou d’un serveur, les groupes admins du domaine et 
+utilisateurs du domaine sont respectivement membres des groupes locaux Administrateurs et Utilisateurs de la 
+machine.
+
+- Domaine local : utilisé pour gérer les autorisations d’accès aux ressources du domaine, il peut compter comme 
+membres des utilisateurs, ordinateurs ou groupes globaux et universels de la forêt. Les groupes de type domaine local 
+membres de ce groupe doivent appartenir au même domaine. Ce type de groupe peut être positionné uniquement sur 
+des ressources (répertoire partagé, imprimante,…) de son domaine.
+- Globale : contrairement à l’étendue Domaine local, les groupes globaux peuvent contenir des utilisateurs, des 
+ordinateurs ou d’autres groupes globaux du même domaine. Ils peuvent être positionnés sur n’importe quelle 
+ressource de la forêt. 
+- Universelle : les groupes universels peuvent contenir les utilisateurs, ordinateurs et groupes globaux et universels 
+de n’importe quel domaine de la forêt. Il peut être membre d’un groupe de type Universelle ou Domaine local. Le 
+groupe peut être positionné sur les ACL de toutes les ressources de la forêt. Il est préférable d’utiliser un nombre 
+restreint de groupes universels. 
+
+La stratégie de gestion des groupes (IGDLA) définie par Microsoft permet de comprendre le système d’imbrication. 
+Cette stratégie consiste à ajouter des Identités (utilisateurs et ordinateurs) dans un groupe Global. Ce dernier est 
+membre d’un groupe Domaine Local. Celui ci sera positionné dans une ACL. 
+
+Ainsi, si un nouveau groupe appelé G_Tech_w doit avoir accès à la ressource partagée nommée Informatique, il 
+n’est plus nécessaire d’accéder à l’ACL. Un ajout dans le groupe DL_IT_w (celui ci est bien sûr positionné sur la 
+ressource) doit être effectué afin de procurer l’accès souhaité. 
