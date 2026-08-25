@@ -157,4 +157,4 @@ ressource) doit être effectué afin de procurer l’accès souhaité.
 Pour créer un groupe il suffit de lancer la console "Utilisateurs et ordinateurs Active Directory" et de séléctionner le dossier "User"
 
 Dans le champ "Nom du groupe" saisissez le nom que vous souhaitez lui donner puis cliquez sur ok
-!Création-d'un-groupe-](../Images/Gestion-Objet-AD/Creation-groupe.png)
+![Création-d'un-groupe-](../Images/Gestion-Objet-AD/Creation-groupe.png)
