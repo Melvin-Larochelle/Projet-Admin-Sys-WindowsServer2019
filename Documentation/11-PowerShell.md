@@ -24,8 +24,9 @@ paramètre CannotChangePassword positionné à False autorise l’utilisateur à
 #**Création d'un groupe en PowerShell**
 
 Comme pour les utilisateurs, il est possible de créer des groupes Active Directory à l’aide de PowerShell. 
-La cmdlet NewADGroup permet d’effectuer l’opération. La syntaxe à utiliser est la suivante :  
-- Dans un premier temps, l’importation du module Active Directory doit être effectuée. Ceci permettra l’utilisation des 
+
+La cmdlet `NewADGroup` permet d’effectuer l’opération. La syntaxe à utiliser est la suivante :  
+Dans un premier temps, l’importation du module Active Directory doit être effectuée. Ceci permettra l’utilisation des 
 cmdlets nécessaires pour effectuer des opérations sur l’annuaire. 
 
 `Import-Module ActiveDirectory`
