@@ -151,3 +151,7 @@ membre d’un groupe Domaine Local. Celui ci sera positionné dans une ACL.
 Ainsi, si un nouveau groupe appelé G_Tech_w doit avoir accès à la ressource partagée nommée Informatique, il 
 n’est plus nécessaire d’accéder à l’ACL. Un ajout dans le groupe DL_IT_w (celui ci est bien sûr positionné sur la 
 ressource) doit être effectué afin de procurer l’accès souhaité. 
+
+# **Création d'un groupe**
+
+Pour créer un groupe il suffit de lancer la console "Utilisateurs et ordinateurs Active Directory" et de séléctionner le dossier "User"
