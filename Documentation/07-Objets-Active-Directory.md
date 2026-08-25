@@ -170,7 +170,7 @@ Cliquez sur l’onglet Membres puis sur le bouton Ajouter.
 Dans le champ Entrez les noms des objets à sélectionner, saisissez le nom d'u utilisateur et cliquez sur Vérifier 
 les noms. 
 
-![Ajout-a-un-groupe-](../Images/Objet-AD/Ajout-groupe.png)
+![Ajout-a-un-groupe](../Images/Objet-AD/Ajout-groupe.png)
 
 Comme pour tous les objets AD (unité d’organisation, compte utilisateur, compte ordinateur et groupe), la protection 
 contre la suppression peut être activée. Certaine opération nécessite de sélectionner l’option Fonctionnalité 
