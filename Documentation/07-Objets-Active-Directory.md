@@ -13,7 +13,7 @@ une base SAM  Security Account Manager) ou de domaine (stockés dans Active Dire
 
 Pour crée un compte utilisateur, il suffit de lancer la console "Utilisateurs et ordinateurs Active Directory" et de faire un clic droit sur le dossier système Users puis, dans le menu contextuel, de sélectionnez Nouveau - Utilisateur
 
-![Création-d'un-compte-Utilisateur](../Images/Gestion-Objet-AD/Creation-compte-utilisateur.png)
+![Création-d'un-compte-Utilisateur](../Images/Objet-AD/Creation-compte-utilisateur.png)
 
 Saisissez un "Prénom" et un "Nom" cela remplira automatiquement la champ "Nom Complet".
 
@@ -157,4 +157,4 @@ ressource) doit être effectué afin de procurer l’accès souhaité.
 Pour créer un groupe il suffit de lancer la console "Utilisateurs et ordinateurs Active Directory" et de séléctionner le dossier "User"
 
 Dans le champ "Nom du groupe" saisissez le nom que vous souhaitez lui donner puis cliquez sur ok
-![Création-d'un-groupe-](../Images/Gestion-Objet-AD/Creation-groupe.png)
+![Création-d'un-groupe-](../Images/Objet-AD/Creation-groupe.png)
