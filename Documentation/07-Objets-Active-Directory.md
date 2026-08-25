@@ -155,6 +155,25 @@ ressource) doit être effectué afin de procurer l’accès souhaité.
 # **Création d'un groupe**
 
 Pour créer un groupe il suffit de lancer la console "Utilisateurs et ordinateurs Active Directory" et de séléctionner le dossier "User"
-
+Dans la barre d’outils, cliquez sur l’icône permettant l’ajout d’un groupe. 
 Dans le champ "Nom du groupe" saisissez le nom que vous souhaitez lui donner puis cliquez sur ok
 ![Création-d'un-groupe-](../Images/Objet-AD/Creation-groupe.png)
+
+L’onglet Général reprend les informations que nous avons saisies. Le changement de l’étendue peut être fait (en 
+fonction des membres du groupe…) depuis cet onglet. Pour mettre l’étendue en Domaine local, il est nécessaire 
+dans un premier temps de la passer en Universelle. 
+
+Les onglets Membres et Membre de permettent de rajouter des objets dans le groupe ou de rendre ce dernier 
+membre d’un autre groupe.  
+
+Cliquez sur l’onglet Membres puis sur le bouton Ajouter. 
+Dans le champ Entrez les noms des objets à sélectionner, saisissez le nom d'u utilisateur et cliquez sur Vérifier 
+les noms. 
+
+![Ajout-a-un-groupe-](../Images/Objet-AD/Ajout-groupe.png)
+
+Comme pour tous les objets AD (unité d’organisation, compte utilisateur, compte ordinateur et groupe), la protection 
+contre la suppression peut être activée. Certaine opération nécessite de sélectionner l’option Fonctionnalité 
+Avancée dans le menu Affichage. 
+
+Comme pour les utilisateurs, il est possible de créer des groupes Active Directory à l’aide de PowerShell. Cela sera expliquer dans le docuement PowerShelle.md
