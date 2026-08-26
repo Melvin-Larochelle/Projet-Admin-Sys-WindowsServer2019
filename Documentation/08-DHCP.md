@@ -65,7 +65,7 @@ serveurs sans risque de conflit IP. Le serveur 1 distribue 80 % du pool d’adre
 configuré pour distribuer les adresses restantes (20 %). Ces pourcentages sont évidemment des cas généraux et 
 peuvent être changés afin de répondre à votre besoin. 
 
-# **3-Configuration de l’étendue** 
+# **4-Configuration de l’étendue** 
 
 - Développez les nœuds ad1.formation.local puis IPv4.
 - Effectuez un clic droit sur IPv4 puis sélectionnez Nouvelle étendue. 
@@ -85,7 +85,7 @@ peuvent être changés afin de répondre à votre besoin.
 - L’étendue est activée à la fin de l’assistant, laissez le choix par défaut. 
 - On clique sur Terminer pour fermer l’assistant.
 
- # **4-Configuration des options dans le DHCP**
+ # **5-Configuration des options dans le DHCP**
 
 Les options permettent de distribuer des « paramètres » supplémentaires dans le bail, tels que le nom de domaine 
 DNS et l’adresse du serveur DNS. Trois types d’options existent : 
@@ -113,7 +113,7 @@ ses options, pouvant être différentes d’une étendue à l’autre.
 Les options de réservation
 Elles s’appliquent uniquement aux réservations. Chaque réservation peut avoir des options différentes.
 
-# **5-Réservation de bail DHCP**
+# **6-Réservation de bail DHCP**
 
 Il est aussi possible de faire une réservation DHCP qui permet de s’assurer qu’un client configuré pour recevoir un bail DHCP qui aura 
 systématiquement la même configuration ; très utile pour les imprimantes réseau que l’on souhaite garder en 
@@ -125,7 +125,7 @@ réservation.
 - L’adresse IP : indique l’adresse qui doit être distribuée au client. 
 - L’adresse MAC : adresse MAC de l’interface réseau qui fait la demande.
 
-# **Mise en place des filtres**
+# **7-Les filtres**
 
 Les filtres permettent de créer des listes vertes et des listes d’exclusion. La liste verte permet à toutes les 
 interfaces réseau dont les adresses MAC sont listées d’obtenir un bail DHCP. Elle est représentée par le dossier 
