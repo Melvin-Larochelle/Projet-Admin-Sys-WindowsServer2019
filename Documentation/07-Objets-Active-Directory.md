@@ -180,8 +180,41 @@ Comme pour les utilisateurs, il est possible de créer des groupes Active Direct
 
 # **4-La Corbeille**
 
+La suppression accidentelle d’un objet Active Directory peut avoir un impact plus ou moins important sur la production. 
+Apparues avec Windows Server 2008 R2, l’activation de la corbeille AD et des objets supprimés étaient effectuées en 
+PowerShell.  
+
+Lorsque la corbeille est activée, les attributs des objets Active Directory supprimés sont préservés. Il est donc 
+possible d’effectuer la restauration de l’objet dans son intégralité. 
+Depuis Windows Server 2012, la fonctionnalité a été améliorée par l’ajout d’une interface graphique qui permet la 
+restauration d’un objet supprimé. Une liste de tous les objets ayant été supprimés s’affiche. L’administrateur peut 
+ainsi sélectionner ceux dont il souhaite la récupération. 
+
+Comme beaucoup de fonctionnalités, la corbeille AD possède ses prérequis. Afin de pouvoir l’activer et l’utiliser, il est 
+nécessaire d’avoir un niveau fonctionnel de la forêt configuré sur le niveau Windows Server 2008 R2 au minimum 
+(tous les contrôleurs de domaine doivent donc être au minimum sous Windows Server 2008 R2). Comme pour les 
+versions précédentes, l’activation de la corbeille est irréversible. La désactivation est donc impossible.
+
+Pour activer la corbeille il faut d'abord vérifier le niveau fonctionnel de la forêt. Pour cela :
+- On ouvre la console Domaines et approbations Active Directory.
+- On effectue un clic droit sur Domaines et approbations Active Directory puis dans le menu contextuel, on sélectionne Augmenter le niveau fonctionnel de la forêt. 
+- On vérifiez qu’il est bien sur un niveau fonctionnel Windows Server 2008 R2 ou version ultérieure.
+
+- On lance ensuite la console Centre d’administration Active Directory depuis les outils d’administration. 
+- Dans le menu de gauche, on double clique sur Formation (local). 
 
 ![Activation-de-la-corbeille](../Images/Objet-AD/Activation-corbeille.png)
 
+- On clique sur Activer la corbeille dans le bandeau Tâches. 
+- Puis sur OK afin de lancer l’activation.
+- créez des unités d’organisation, des groupes et des utilisateurs de test puis supprimez les afin de les 
+placer dans la corbeille. 
+
+
+- Dans la console Centre d’administration Active Directory, on double clique sur Deleted Objects.
+- Les objets supprimés précédemment apparaissent.  
 
 ![Verification-de-la-corbeille](../Images/Objet-AD/Verif-corbeille.png)
+
+Il est donc ensuite possible de sélectionner les objets supprimés puis cliquez sur Restaurer. 
+L'objet sera donc ensuite restauré.
