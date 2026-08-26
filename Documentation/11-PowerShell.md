@@ -1,4 +1,4 @@
-#**Création d’un utilisateur en PowerShell**
+#**1- Création d’un utilisateur en PowerShell**
 
 La création d’utilisateurs Active Directory en PowerShell permet d’automatiser la création de un ou plusieurs objets. 
 Il est possible d’utiliser un fichier CSV avec un script PowerShell afin de créer un grand nombre d’utilisateur. 
@@ -21,7 +21,8 @@ On peut maintenant utilisé `New-aduser` afin de procéder à la création du co
 paramètre CannotChangePassword positionné à False autorise l’utilisateur à changer le mot de passe. 
 
 `New-aduser -name "userTest" -AccountPassword $password   -CannotChangePassword $False -City "Marseille" -Company "ENI" -Department "IT"   -Description "Création à l’aide de Powershell" -DisplayName "Utilisateur Test"   -EmailAddress "Test@nibonnet.fr" -Enabled $True -GivenName "Utilisateur"   -HomePage "www.nibonnet.fr" -PasswordNeverExpires $True -SamAccountName "utest"  -UserPrincipalName "Test@Formation.local" `
-#**Création d'un groupe en PowerShell**
+
+#**2- Création d'un groupe en PowerShell**
 
 Comme pour les utilisateurs, il est possible de créer des groupes Active Directory à l’aide de PowerShell. 
 
