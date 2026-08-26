@@ -38,14 +38,14 @@ Comme pour les autres rôles, DHCP s’installe depuis la console Gestionnaire d
 - Dans la fenêtre on sélectionne le type d’installation, on laisse le choix par défaut.
 - On séléctionne le rôle Serveur DHCP. On clique ensuite sur Ajouter des fonctionnalité 
 
-![Installation-DHCP](../Image/DHCP/Installation-DHCP.png)
+![Installation-DHCP](../Images/DHCP/Installation-DHCP.png)
 
 - On valide
 - Dans le Gestionnaire de serveur, on clique sur la Notifications (drapeau), puis sur Terminer la configuration 
 DHCP. 
 - On valide les valeur par defaut dans la fênetre qui s'affche.
 
-![Validation-de-l'installation-DHCP](../Image/DHCP/Validation-install-DHCP.png)
+![Validation-de-l'installation-DHCP](../Images/DHCP/Validation-install-DHCP.png)
 Le rôle est bien installé, il ne reste plus cas le configurer
 
 # **3-Ajout d’une nouvelle étendue**
@@ -71,7 +71,7 @@ peuvent être changés afin de répondre à votre besoin.
 - Effectuez un clic droit sur IPv4 puis sélectionnez Nouvelle étendue. 
 - L’assistant de création de la nouvelle étendue se lance.
 
-![Configuration-Etendu-DHCP](../Image/DHCP/Configuration-etendu-DHCP.png)
+![Configuration-Etendu-DHCP](../Images/DHCP/Configuration-etendu-DHCP.png)
 
 - On lui donne un nom dans le champ Nom. 
 - La plage d’adresses distribuable que l'on va mettre de 192.168.1.100 à 192.168.1.150. 
@@ -101,7 +101,7 @@ dans les options d’étendue, c’est cette dernière qui l’emporte, l’opti
 - On coche la case 003 Routeur et on saisi 192.168.1.254 dans le champ Addresse IP. 
 - On cliquez sur Ajouter puis sur OK pour créer l’option.
 
-![Option-Serveur-DHCP](../Image/DHCP/Option-serveur-DHCP.png)
+![Option-Serveur-DHCP](../Images/DHCP/Option-serveur-DHCP.png)
 
 L’option apparait dans la console DHCP. 
 Les options apparaissent également dans les Options d’étendue et dans les options de Réservations. 
