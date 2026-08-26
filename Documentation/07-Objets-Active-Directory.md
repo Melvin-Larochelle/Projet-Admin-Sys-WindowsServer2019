@@ -1,4 +1,4 @@
-# **Le compte utilisateur**
+# **1-Le compte utilisateur**
 
 Active Directory contient différents types d’objets, dont le compte utilisateur. Généralement rattaché à une personne 
 physique, ce type d’objet permet d’être authentifié par un contrôleur de domaine. L’utilisateur doit pour cela saisir un 
@@ -87,7 +87,7 @@ avec les droits configurés dans la liste de contrôle d’accès, sinon l’acc
 
 Il est aussi possible de crée un utilisateur en PowerShell afin de l'automatisé. Cette rubrique sera expliqué dans le document "PowerShell"
 
-# **Les groupes dans Active Directory**
+# **2-Les groupes dans Active Directory**
 
 Afin de faciliter l’administration, il est recommandé d’utiliser des groupes (comprenant des utilisateurs ou des 
 ordinateurs). L’administration des accès à des ressources partagées au travers de groupes de sécurité est plus 
@@ -152,7 +152,7 @@ Ainsi, si un nouveau groupe appelé G_Tech_w doit avoir accès à la ressource p
 n’est plus nécessaire d’accéder à l’ACL. Un ajout dans le groupe DL_IT_w (celui ci est bien sûr positionné sur la 
 ressource) doit être effectué afin de procurer l’accès souhaité. 
 
-# **Création d'un groupe**
+# **3-Création d'un groupe**
 
 Pour créer un groupe il suffit de lancer la console "Utilisateurs et ordinateurs Active Directory" et de séléctionner le dossier "User"
 Dans la barre d’outils, cliquez sur l’icône permettant l’ajout d’un groupe. 
@@ -177,3 +177,11 @@ contre la suppression peut être activée. Certaine opération nécessite de sé
 Avancée dans le menu Affichage. 
 
 Comme pour les utilisateurs, il est possible de créer des groupes Active Directory à l’aide de PowerShell. Cela sera expliquer dans le docuement PowerShelle.md
+
+# **4-La Corbeille**
+
+
+![Activation-de-la-corbeille](../Images/Objet-AD/Activation-corbeille.png)
+
+
+![Verification-de-la-corbeille](../Images/Objet-AD/Verif-corbeille.png)
