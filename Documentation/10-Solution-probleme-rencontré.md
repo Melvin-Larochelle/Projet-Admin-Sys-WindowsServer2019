@@ -1,4 +1,4 @@
-# **Résolution problème rencontré pour l'acces a internet **
+# **Résolution problème rencontré pour l'acces a internet**
 
 Ma machine SRV-Core ayant besoin d'accéder a internet pour installer le package NuGet. J'ai configurer AD1 pour qu'il permettes a mes machines de communiquer avec Internet en passant par lui, afin qu'il agisse comme un router/NAT)
 
