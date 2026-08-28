@@ -172,7 +172,7 @@ basculement DHCP.
 ![DHCP-HD](../Images/DHCP/DHCP-HD.png)
 
 - On saisi P@rtDHCP dans le champ Secret partagé.
-- ![Verification-DHCP-HD](../Images/DHCP/Verif-DHCP-HD.png)
+![Verification-DHCP-HD](../Images/DHCP/Verif-DHCP-HD.png)
 - On vérifiez que les étapes ont bien l’état Réussite puis cliquez sur Fermer. 
 
 Sur SV1, accédez à la console DHCP. L’étendue est maintenant présente. 
