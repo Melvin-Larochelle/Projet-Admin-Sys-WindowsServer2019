@@ -139,3 +139,47 @@ Il est recommandé de créer les filtres avant d’activer la fonctionnalité. D
 votre réseau ne pourra demander de bail. 
 
 Les filtres doivent être activés sur les deux serveurs dans le cas où la fonctionnalité de basculement est configurée.
+
+# **8-Haute disponibilité du service DHCP**
+
+Le service DHCP est un service important dans un réseau informatique. En cas d’arrêt du service, plus aucun bail n’est 
+attribué et les machines vont au fur et à mesure perdre l’accès au réseau. Pour éviter cela, il est possible d’installer 
+un deuxième serveur DHCP et de partager la plage distribuée (généralement 80 % pour le premier serveur et 20 % 
+pour l’autre). La deuxième solution consiste à installer un cluster DHCP, solution efficace mais qui nécessite quelques 
+compétences. 
+
+Depuis Windows Server 2012, il est possible de faire travailler deux serveurs DHCP sans avoir à monter un cluster. Si 
+un des serveurs n’est plus en ligne, les machines clientes peuvent continuer à recevoir des baux DHCP. 
+Lors de la configuration du mode équilibrage de charge, un découpage de la plage d’adresse est effectué en fonction 
+du pourcentage configuré par l’administrateur. Chacun à la responsabilité de la partie de l’étendue qu’il gère. 
+L’administration s’effectue par l’intermédiaire d’un des deux serveurs. Attention les réservations doivent être créées 
+sur les deux serveurs.
+
+Le basculement DHCP ne peut contenir que deux serveurs. De plus, il peut être activé uniquement pour les étendues 
+IPv4.
+
+Pour cela il suffit d'installer le rôle DHCP sur un autre serveur dans Lab cela sera sur SV1.
+
+Puis sur AD1, ouvrir la console DHCP. 
+- On double clique sur ad1.formation.local puis sur IPv4. 
+- On effectue un clic droit sur IPv4 puis on clique sur Configurer un basculement. 
+- Une seule étendue est présente dans le DHCP, on clique sur Suivant dans la fenêtre Introduction au 
+basculement DHCP.
+- Dans la fenêtre Spécifier le partenaire, on clique sur Ajouter un serveur. 
+- Sélectionnez sv1.formation.local puis on clique sur OK. 
+- On clique sur Suivant pour valider le partenaire.
+
+![DHCP-HD](../Images/DHCP/DHCP-HD.png)
+
+- On saisi P@rtDHCP dans le champ Secret partagé.
+- ![Verification-DHCP-HD](../Images/DHCP/Verif-DHCP-HD.png)
+- On vérifiez que les étapes ont bien l’état Réussite puis cliquez sur Fermer. 
+
+Sur SV1, accédez à la console DHCP. L’étendue est maintenant présente. 
+- On effectue un clic droit sur IPv4 puis on sélectionne Propriétés. 
+- On sélectionne l’onglet Basculement.
+
+![Verification2-DHCP-HD](../Images/DHCP/Verif2-DHCP-HD.png)
+
+On peut cliquer sur Modifier pour visualiser les propriétés qui sont modifiables. 
+On modifie la valeur du champ Délai de transition maximale du client pour afficher 1 minute. 
