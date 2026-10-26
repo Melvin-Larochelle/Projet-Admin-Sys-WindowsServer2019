@@ -51,3 +51,59 @@ R2, il est possible d’utiliser une base de données SQL Server (sur le serveur
 - .NET Framework : installation de la fonctionnalité .NET Framework 4.5.
 
 # **3. Installation d’IPAM**
+IPAM ne doit pas être installer sur un contrôleur de de domaine.
+
+Pour installer le service on lance la console "Gestionnaire de serveur", dans notre exemple cela sera sur AD2
+Dans les fenêtres Sélectionner le type d’installation et Sélectionner le serveur de destination, on clique sur "Suivant" en laissant le choix par défaut. 
+Dans la fenêtre de sélection des fonctionnalités, cochez la case Serveur de gestion des adresses IP puis on clique sur le bouton "Ajouter des fonctionnalités" dans la fenêtre qui apparaît.
+
+![Installation-Service-IPAM](../Images/IPAM/Installation-Service-IPAM.png)
+
+Dans la console Gestionnaire de serveur, cliquez sur IPAM afin d’afficher la page de présentation.
+Puis cliquez sur le lien "Configurer le serveur IPAM"
+
+Ma configuration aura la méthode d'approvisionnement basé sur une stratégie de groupe et dans le champ Préfixe du nom d’objet de stratégie de groupe, j'ai saisi "IPAM".
+
+
+![Configuration-Service-IPAM](../Images/IPAM/Configuration-Service-IPAM.png)
+
+Ensuite on va Configurer la découverte de serveurs
+On clique sur "Obtenir les forêt"s afin d’ajouter le domaine Formation.local dans l’étendue.
+
+On clique sur Ajouter.  
+On Configure les rôles à découvrir en décochant ceux non souhaités. 
+
+![Configuration-Decouverte-IPAM](../Images/IPAM/Configuration-Decouverte-IPAM.png)
+
+On clique sur OK. 
+Dans la fenêtre VUE D’ENSEMBLE, cliquez sur Démarrer la découverte. 
+Cliquez sur Autres dans le bandeau jaune afin d’avoir plus de détails. 
+
+Ensuite dans "Inventaire de Serveur", on peut voir les serveurs et leurs états :
+
+![Information-Decouverte-IPAM](../Images/IPAM/Information-Decouverte-IPAM.png)
+
+Il est maintenant nécessaire de donner à AD2 le droit de gérer les différents serveurs. Nous allons donc utiliser les 
+objets de stratégie de groupe pour autoriser l’accès aux serveurs NPS (Network Policy Server), DHCP (Dynamic Host 
+Configuration Protocol) et DNS (Domain Name System). Dans notre cas seul, DNS et DHCP sont présents sur le réseau 
+local.
+
+Sur le serveur ayant le rôle IPAM, lancez une console PowerShell en tant qu’administrateur. 
+Saisissez la commande ci-dessous puis appuyez sur [Entrée] :
+
+Invoke-IpamGpoProvisioning -Domain formation.local -GpoPrefixName IPAM -IpamServerFqdn ad2.formation.local
+
+De nouvelles stratégies sont présentes dans la console Gestion de stratégie de groupe. 
+
+![Stratégie-Groupe-IPAM](../Images/IPAM/Stratégie-Groupe-IPAM.png)
+
+Dans la console de configuration d’IPAM, effectuez un clic droit sur la ligne AD1 puis sélectionnez Modifier 
+serveur. 
+Dans la liste déroulante État de gérabilité, sélectionnez Géré. 
+Cliquez sur OK. 
+
+![Etat-Gérabilité-IPAM](../Images/IPAM/Etat-Gérabilité-IPAM.png)
+
+Sur le serveur AD1, ouvrez une invite de commandes DOS et saisissez la commande gpupdate /force 
+puis redémarrez le serveur. Ceci permet l’application des stratégies de groupe précédemment créées avec 
+la commande PowerShel
